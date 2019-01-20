@@ -6,7 +6,6 @@ module.exports = (app) => {
     const { url, username, password } = app.get('neode');
     
     if (!url || !username || !password) {
-        console.error('Missing Neo4j');
         throw Error('Missing Neo4j Configuration');
     }
     
@@ -17,7 +16,6 @@ module.exports = (app) => {
     );
 
     if (!fileSystem.existsSync(__dirname + '/models')){
-        console.error('Missing Models');
         throw Error('No Models Found');
     }
 
